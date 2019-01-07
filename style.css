@@ -1,0 +1,399 @@
+/* box model */
+*, :after, :before { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    
+}
+
+
+/* HLAVICKA */
+header {
+    background-image: url(images/island-hlavicka.jpg);
+    background-size: cover;
+}
+
+.titulek {
+    font-family: 'Raleway', serif;
+    color:white;
+    text-align: center;
+    margin:0px;
+    padding:20px 0px;
+    font-size: 40px;
+}
+
+.perex {
+    color:white;
+    text-align: center;
+    padding:0px 20px;
+    margin:0px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.autor {
+    color: rgba(236, 233, 233, 0.8);
+    text-align: center;
+    font-style: italic;
+    padding:40px 0px;
+    margin:0px;
+    position: relative;
+}
+
+.autor::after {
+    content: "";
+    width:20%;
+    height: 1px;
+    position: absolute;
+    border-top: 2px solid rgba(236, 233, 233, 0.8);
+    left: 40%;
+    top:20%;
+}
+
+
+/* MENU */
+
+nav {
+    text-transform: uppercase;
+    background-color: white;
+}
+
+nav ul {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0px;
+    padding:20px 0px;
+}
+
+nav li {
+    display: inline-block;
+    padding:5px 0px;
+    border-bottom: 1px solid rgb(243, 241, 241);
+    margin:0px 30px;
+}
+
+nav a {
+    font-size: 14px;
+    color: gray;
+    text-decoration: none;
+    font-family: 'Raleway', serif;
+}
+
+
+
+/* OBSAH */
+section {
+    background-color: white;
+}
+
+.obr img {
+    width:100%;
+    margin-top:20px;
+    display:block;
+}
+
+article p {
+    padding:20px 20px 0px 20px;
+    margin:0px;
+}
+
+.obr .popisek {
+    color:grey;
+    font-size: 12px;
+    text-align: center;
+    padding:5px 0px 10px 0px;
+    margin:0px;
+    font-family: 'Raleway', serif;
+}
+
+.obr .popisek a{
+    color:grey;
+    font-size: 12px;
+    font-family: 'Raleway', serif;
+}
+
+article h2 {
+    padding-left:20px;
+    margin:0px;
+    position:relative;
+}
+
+article h2::after {
+        content: "";
+        width:100px;
+        height: 1px;
+        border-bottom: 5px solid rgb(102, 168, 223);
+        position:absolute;
+        bottom:0;
+        left: 0;
+}
+
+/* FOTOGALERIE */
+
+h2 {
+    padding:20px;
+    margin: 0px;
+    background-color: white;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    width:100px;
+    height: 1px;
+    border-bottom: 5px solid rgb(102, 168, 223);
+    position:absolute;
+    bottom:0;
+    left: 0;
+}
+
+.galerie {
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 5px 30px -10px gray;
+    padding-top:20px;
+}
+
+.foto img {
+    width:100%;
+}
+
+.foto .popisek {
+    font-size: 12px;
+    color:grey;
+    font-weight: 700;
+    text-align: center;
+    padding:5px 0px 15px 0px;
+    font-family: 'Raleway', serif;
+    margin: 0px;
+}
+
+.foto .popisek .popisek-copy {
+    font-weight: 400;
+    font-family: 'Raleway', serif;
+}
+
+.foto .popisek a {
+    color: grey;
+}
+
+/* PATICKA */
+footer {
+    font-size: 12px;
+    padding:20px;
+    color:gray;
+    font-family: 'Raleway', serif;
+    
+}
+
+footer a {
+    color: gray;
+    font-family: 'Raleway', serif;
+}
+
+
+/* tablety */
+@media (min-width:500px){
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        margin:0px 20px;
+        border-collapse: collapse;
+    }
+
+    nav li {
+        border-top:1px solid rgb(243, 241, 241);
+        border-bottom:1px solid rgb(243, 241, 241);
+        margin: 0px;
+        width:25%;
+        padding:4px 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li:nth-child(1) {
+        border-right:1px solid rgb(243, 241, 241); 
+    }
+    
+    nav li:nth-child(3) {
+        border-right:1px solid rgb(243, 241, 241); 
+        border-left:1px solid rgb(243, 241, 241); 
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+
+    .obr {
+        position: relative;
+    }
+    .obr .popisek {
+        position: absolute;
+        bottom: 0px;    
+        right:20px;
+        color:white;
+    }
+
+    .obr .popisek a {
+        color:white;
+    }
+
+    .galerie {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .foto {
+        width:50%;
+        position: relative;
+        height: 120%;
+        overflow: hidden; 
+    }
+
+    .foto img {
+        display: block;
+    }
+
+    .foto .popisek{
+        width:100%;
+        position:absolute;
+        /* bottom:0px; */
+        color:white;
+        background-color: rgba(43, 41, 41, 0.61);
+        transform: translate(0, 0);
+        transition: 0.5s ease-in-out;
+    }
+
+    .foto:hover .popisek {
+        transform: translate(0, -100%); /*výška samotného prvku*/
+        transition: 0.8s ;
+    }
+
+    .foto .popisek a {
+        color: white;
+    }
+ 
+        
+}
+/* pc */
+@media (min-width:1000px){
+    
+    body {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 500px;
+        
+    }
+
+    header .perex {
+        width:960px;
+        padding-left:150px;
+        padding-right: 150px;
+    }
+
+    header .titulek {
+        font-size: 60px;
+        padding: 60px 0px 30px 0px;
+    }
+
+    nav ul{
+        flex-direction: column;
+        float: left;
+        display: inline-block;
+        padding:40px 0px;
+        margin:0px 40px;
+    }
+
+    nav li{
+        width:100%;
+        border-bottom:1px solid rgb(243, 241, 241);
+        padding: 9px 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav li a {
+        font-size: 14px;
+        
+    }
+
+    nav li:nth-child(1) {
+      
+        border-right:none;
+        border-bottom:none;
+        border-top:none;
+    }
+    
+    nav li:nth-child(3) {
+        border:none;
+       
+    }
+
+    section {
+        width: 960px;
+        margin-top: -100px;
+        box-shadow: -5px 0px 30px -10px gray, 5px 0 30px -10px gray;
+    }
+
+    section article {
+        margin:20px 40px 0px 250px;
+        padding:0px;
+    }
+
+    section .druhy {
+        margin:20px 250px 0px 0px;
+        padding:0px;
+    }
+
+    section .druhy h2 {
+        padding-left:40px;
+    }
+
+    section .druhy p {
+        padding-left: 40px;
+    }
+    
+
+    article h2 {
+        width:100%;
+    }
+
+    .galerie {
+        width:960px;
+        box-shadow: -5px 0px 30px -10px gray, 5px 0 30px -10px gray;
+    }
+
+    h2 {
+        width:960px;
+        
+    }
+
+    .foto {
+        width: calc(100%/3);
+        box-shadow: -5px 0px 30px -10px gray, 5px 0 30px -10px gray;
+    }
+
+
+    footer {
+        width:960px;
+        box-shadow: -5px 0px 30px -10px gray, 5px 0 30px -10px gray;
+    }
+}
